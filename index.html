@@ -1,563 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <title>SACS | Tec Misantla</title>
+  <title>SMaDE 2025</title>
   <link rel="icon" href="img/logohead.png" type="image/x-icon">
   <meta content="width=device-width, initial-scale=0.5" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
-
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">  
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-
-  <!-- Favicon -->
-  <link href="img/favicon.ico" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
+  <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-  <!-- Main Stylesheet File -->
+  <!-- Tu CSS principal -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: Bell
-    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+  <!-- Estilos mínimos para el modal “MICAI-like” y keynotes (si no los tienes ya en style.css) -->
+  <style>
+    /* ===== Keynotes look & feel ===== */
+    .keynote-card{border:none;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.08);overflow:hidden;transition:transform .2s, box-shadow .2s}
+    .keynote-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.12)}
+    .keynote-photo{height:280px;object-fit:cover;background:#eef2f6}
+    .keynote-name{font-weight:800;color:#2b2b2b}
+    .keynote-affil{color:#6c757d;font-size:.95rem}
+    .badge-info{background:#e6f6f8;color:#1798a5;font-weight:700;padding:.45rem .65rem}
+    .btn-view-more{background:#1798a5;border:none;font-weight:700;border-radius:999px;padding:.45rem 1rem}
+    .btn-view-more:hover{background:#117f89}
+
+    /* ===== Countdown overlay ===== */
+    .countdown{position:absolute;right:4%;top:8%;display:flex;gap:28px;background:rgba(52, 53, 58, 0.95);color:#fff;padding:14px 22px;border-radius:4px;z-index:3}
+    .countdown .cd-box{text-align:center}
+    .countdown .cd-box span{display:block;font-family:"Roboto",Helvetica,Arial,sans-serif;font-weight:900;font-size:36px;line-height:1}
+    .countdown .cd-box small{display:block;margin-top:4px;font-size:15px;opacity:.9}
+
+    /* ===== MICAI-like modal ===== */
+    .micai-modal{border:none;border-radius:16px;overflow:hidden;box-shadow:0 60px 20px rgba(0,0,0,.35)}
+    .micai-close{position:absolute;right:18px;top:12px;border:0;background:transparent;font-size:28px;line-height:1;color:#123;z-index:5}
+    .micai-hero{background:#fff}
+    .micai-portrait{position:relative;min-height:280px}
+    .micai-portrait img{position:relative;z-index:2;max-width:100%;height:100%;object-fit:cover;display:block}
+    .micai-color-block{position:absolute;left:24px;top:24px;width:62%;height:62%;border-radius:22px;z-index:1;
+      background:linear-gradient(135deg,#ff6a6a 0%, #7a6af8 50%, #47a9ff 100%)}
+    .micai-name{font-weight:900;letter-spacing:.6px;color:#13235b;margin-bottom:10px}
+    .micai-quote{font-weight:900;color:#13235b;margin:0 0 14px 0}
+    .micai-bullets{list-style:disc;padding-left:18px;margin:8px 0 12px}
+    .micai-bullets li{margin-bottom:6px}
+    .micai-affil{color:#334;opacity:.85}
+    .micai-body{background:#fff}
+
+    /* Hero/carrusel overlay text */
+    .overlay-text{background:rgba(0,0,0,.45);padding:18px 36px;border-radius:12px}
+    .hero-logo{width:120px;max-width:28vw;margin-bottom:10px}
+
+    /* Header logos en menú (ajusta si necesitas) */
+    .menu-logo{height:34px;margin-right:8px;vertical-align:middle}
+    .smade-text{font-weight:800;margin-left:6px;color:#fff}
+    .year-text{font-weight:800;margin-left:4px;color:#fff}
+  </style>
 </head>
 
 <body>
   <!-- Header -->
-  <header id="header">
+  <header id="header" class="fixed-top">
     <div class="container">
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li class="menu-has-children"><a href="">Call for papers<i class="fa fa-angle-down"></i>
- </a>
-            <ul> 
-              <li><a href="" target="_blank">SACS 2025</a></li>
+          <li class="logo-item">
+            <a href="#">
+              <img src="img/logo2.png" alt="SMaDE 2025 Logo" class="menu-logo">
+              <span class="smade-text">SMaDE</span> <span class="year-text">2025</span>
+              <img src="img/ITSM.png" alt="ITSM Logo" class="menu-logo">
+              <img src="img/Logo-TecNM.png" alt="TecNM Logo" class="menu-logo">
+              <img src="img/ITESCO.png" alt="ITESCO Logo" class="menu-logo">
+            </a>
+          </li>
+
+          <li class="active"><a href="index.html">Home</a></li>
+          <li class="menu-has-children"><a href="">Call For Papers<i class="fa fa-angle-down"></i></a>
+            <ul>
+              <li><a href="Smade2025.html" target="_self">SMaDE 2025</a></li>
               <li><a href="pdf/sacs2018/SACS-2018.jpg" target="_blank">SACS 2018</a></li>
               <li><a href="pdf/sacs2017/SACS-2017.pdf" target="_blank">SACS 2017</a></li>
-
             </ul>
           </li>
-          <li class="menu-has-children"><a href="">For authors<i class="fa fa-angle-down"></i>
-          </a>
-            <ul>
-              <li><a href="index.html" target="_blank">Information</a></li>
-            </ul>
-          </li>
-          <li class="menu-has-children"><a href="importanDate.html">Important dates</a></li>
-          <li class="menu-has-children"><a href="program.html">Program</a></li>
+          <li><a href="Committee.html">Committees</a></li>
+          <li><a href="importanDate.html">Important dates</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="registration.html">Registration</a></li>
         </ul>
       </nav>
-      <!-- #nav-menu-container -->
-
-      <nav class="nav social-nav pull-right d-none d-lg-inline">
-        <h1>Symposium on Applied Computer Science | SACS</h1>
-      </nav>
+      <nav class="nav social-nav pull-right d-none d-lg-inline"></nav>
     </div>
   </header>
-  <!-- #header -->
-<!-- Hero con Carrusel (Bootstrap 4) -->
-<div id="heroCarousel" class="carousel slide hero-carousel" data-ride="carousel" data-interval="4500">
-  <!-- Indicadores (opcionales) -->
-  <ol class="carousel-indicators">
-    <li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#heroCarousel" data-slide-to="1"></li>
-  </ol>
 
-  <div class="carousel-inner">
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
-      <img src="img/cover2.jpg" class="d-block w-100" alt="Fondo 1">
+  <!-- Hero con Carrusel -->
+  <div id="heroCarousel" class="carousel slide hero-carousel" data-ride="carousel" data-interval="4500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/Coatzacoalcos4.jpg" class="d-block w-100" alt="Fondo 1">
+      </div>
     </div>
 
-    <!-- Slide 2 -->
-    <div class="carousel-item">
-      <img src="img/cover1.jpg" class="d-block w-100" alt="Fondo 2">
+    <!-- Texto encima -->
+    <div class="carousel-caption">
+      <div class="overlay-text">
+        <img src="img/logo2.png" alt="SMaDE Logo" class="hero-logo">
+        <h1 class="display-4 font-weight-bold"><strong>SMaDE 2025</strong></h1>
+        <p class="lead mb-1"><strong>International Congress on Smart Machines and Data Engineering</strong></p>
+        <p class="mb-0"><strong>Novembre 27–28, 2025 | Coatzacoalcos, Veracruz, Mexico</strong></p>
+        <p class="mb-0"><strong>Encuentro de Cuerpos Académicos</strong></p>
+      </div>
     </div>
-  </div> 
+   <div class="hero-note" role="note" aria-label="Announcement: Hybrid Event">
+      <i class="fa fa-bullhorn" aria-hidden="true"></i>
+      <div class="note-body">
+        <span class="note-title">Hybrid Event</span>
+      </div>
+    </div>
 
-  <!-- Controles (BS4 correcto) -->
-  <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev" aria-label="Anterior">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Anterior</span>
-  </a>
-  <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next" aria-label="Siguiente">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Siguiente</span>
-  </a>
 
-  <!-- Texto encima -->
-  <div class="carousel-caption">
-    <div class="overlay-text">
-      <h1 class="display-4 font-weight-bold"><strong>SMaDE 2025</strong></h1>
-      <p class="lead mb-1"><strong>International Congress on Smart Machines and Data Engineering</strong></p>
-      <p class="mb-0"><strong>December 4–5, 2025 | Coatzacoalcos, Veracruz, Mexico</strong></p>
+    <!-- Countdown -->
+    <div id="countdown" class="countdown">
+      <div class="cd-box"><span id="cd-days">0</span><small>Days</small></div>
+      <div class="cd-box"><span id="cd-hours">0</span><small>Hours</small></div>
+      <div class="cd-box"><span id="cd-mins">0</span><small>Minutes</small></div>
+      <div class="cd-box"><span id="cd-secs">0</span><small>Seconds</small></div>
+    </div>
+  </div>
+
+  <!-- Band 1: Intro -->
+  <section class="band band-intro" id="information">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <h2 class="program-title">What is <span class="accent">SMaDE 2025</span>?</h2>
+          <p class="band-text">
+            The <strong>International Congress on Smart Machines and Data Engineering (SMaDE)</strong> is an international forum dedicated to presenting and discussing cutting-edge research, methodologies, and applications in <em>artificial intelligence</em>, <em>algorithms</em>, and <em>data-driven technologies</em>.
+            It will take place on <strong>Novembre 27–28, 2025</strong> in <strong>Coatzacoalcos, Veracruz, Mexico</strong>.
+          </p>
+          <p class="band-text">
+            <strong>SMaDE</strong> brings together researchers, professionals, students, and industry leaders to exchange scientific results, foster collaboration, and explore emerging trends in intelligent systems and data engineering.
+          </p>
+
+          <div class="mt-3">
+            <a class="btn" href="importanDate.html">Important Dates</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keynotes -->
+  <section id="keynotes" class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-4" style="font-weight:800; color:#2b2b2b;">Keynote Speakers</h3>
+
+      <div class="row justify-content-center">
+        <!-- Keynote 1 -->
+        <div class="col-sm-6 col-md-5 col-lg-4 mb-4">
+          <div class="card keynote-card h-100">
+            <img class="card-img-top keynote-photo keynote-photo--contain keynote-photo--boost" src="img/DelaCruz.png" alt="Dr. Eddy Sánchez-DelaCruz">
+            <div class="card-body d-flex flex-column">
+              <h5 class="keynote-name mb-1">Dr. Eddy Sánchez-DelaCruz</h5>
+                <p class="keynote-affil mb-2 text-center">
+                  <img src="img/mexico.png" alt="Mexico Flag" style="height:30px;vertical-align:middle;">
+                </p>
+
+              <div class="mb-3">
+                <span class="keynote-badge">"A novel framework for supervised Machine learning"</span>
+              </div>
+
+              <div class="mt-auto">
+                <!-- <button
+                  type="button"
+                  class="btn btn-primary btn-sm btn-view-more"
+                  data-keynote="open"
+                  data-name="Dr. Eddy Sánchez-DelaCruz"
+                  data-affil="TecNM / Instituto Tecnológico Superior de Misantla"
+                  data-title="A novel framework for supervised Machine learning"
+                  data-abstract="This talk reviews recent approaches..."
+                  data-bio="Professor-researcher at the TecNM Misantla campus..."
+                  data-photo="img/DelaCruz.png"
+                  data-highlights='[
+                    "-----",
+                    "-----",
+                    "-----"
+                  ]'
+                  data-links='[
+                    {"label":"Google Scholar","href":"https://scholar.google.com/citations?user=NEnGlMEAAAAJ&hl=es"},
+                    {"label":"ORCID","href":"https://orcid.org/0000-0002-2357-7799"},
+                    {"label":"Website","href":"https://www.eddsac.com/"}
+                  ]'
+                >
+                  View more
+                </button>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Keynote 2 
+        <div class="col-sm-6 col-md-5 col-lg-4 mb-4">
+          <div class="card keynote-card h-100">
+            <img class="card-img-top keynote-photo keynote-photo--contain"   src="img/Sara.png" alt="Profª. Justine Sara Leglise">
+            <div class="card-body d-flex flex-column">
+              <h5 class="keynote-name mb-1">Profª. Justine Sara Leglise</h5>
+              <p class="keynote-affil mb-2 text-center">
+                <img src="img/francia.png" alt="Mexico Flag" style="height:25px;vertical-align:middle;">
+              </p>
+           
+
+             <div class="mb-3">
+                <span class="keynote-badge">
+                  "Challenges and opportunities in international educational mobility"
+                </span>
+              </div>
+
+
+              <div class="mt-auto">
+                 <button
+                  type="button"
+                  class="btn btn-primary btn-sm btn-view-more"
+                  data-keynote="open"
+                  data-name="Profª. Justine Sara Leglise"
+                  data-affil="TecNM / Instituto Tecnológico Superior de Misantla"
+                  data-title="Challenges and opportunities in international educational mobility"
+                  data-abstract="..."
+                  data-bio="..."
+                  data-photo="img/Sara.png"
+                  data-highlights='[
+                    "-----",
+                    "-----",
+                    "-----"
+                  ]'
+                  data-links='[
+                    {"label":"Google Scholar","href":""},
+                    {"label":"ORCID","href":""},
+                    {"label":"Website","href":""}
+                  ]'
+                >
+                  View more
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>-->
+          <!-- Keynote 3 -->
+      
+        <div class="col-sm-5 col-md-5 col-lg-3 mb-3">
+          <div class="card keynote-card h-60 text-center d-flex flex-column justify-content-center align-items-center">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <span style="font-size: 8rem; color: #9b9999; margin-bottom: 10px;">
+                <i class="fa fa-question-circle"></i>
+              </span>
+              <h2 class="keynote-name mb-1">To be announced</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Sponsors -->
+<section id="sponsors" class="sponsors py-5">
+  <div class="container text-center">
+    <h3 class="mb-4">Sponsors</h3>
+
+    <div id="sponsorCarousel" class="carousel slide" data-ride="carousel" data-interval="3500" data-pause="hover">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center align-items-center sponsor-track">
+            <img src="img/logo2.png"  alt="SMaDE 2025 Logo" class="sponsor-logo">
+            <span class="smade-text">SMaDE</span>
+            <span class="year-text">2025</span>
+            <img src="img/ITSM.png" alt="ITSM Logo" class="sponsor-logo">
+            <img src="img/Logo-TecNM.png"  alt="TecNM Logo" class="sponsor-logo">
+            <img src="img/ITESCO.png"   alt="ITESCO Logo" class="sponsor-logo">
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center align-items-center sponsor-track">
+            <img src="img/logo2.png"  alt="SMaDE 2025 Logo" class="sponsor-logo">
+            <span class="smade-text">SMaDE</span>
+            <span class="year-text">2025</span>
+            <img src="img/ITSM.png" alt="ITSM Logo" class="sponsor-logo">
+            <img src="img/Logo-TecNM.png"  alt="TecNM Logo" class="sponsor-logo">
+            <img src="img/ITESCO.png"   alt="ITESCO Logo" class="sponsor-logo">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <a class="carousel-control-prev" href="#sponsorCarousel" role="button" data-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#sponsorCarousel" role="button" data-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-lg-left text-center">
+          <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 12px;">
+            <span style="font-size: 1rem;">
+              © 2025 International Congress on Smart Machines and Data Engineering
+            </span>
+            <img src="img/logo2.png" alt="SMaDE 2025 Logo" class="menu-logo">
+            <span class="smade-text">SMaDE</span>
+            <span class="year-text">2025</span>
+            <img src="img/ITSM.png" alt="ITSM Logo" class="menu-logo">
+            <img src="img/Logo-TecNM.png" alt="TecNM Logo" class="menu-logo">
+            <img src="img/ITESCO.png" alt="ITESCO Logo" class="menu-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+  <!-- =================== JS: UNA sola cadena =================== -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Countdown -->
+  <script>
+    const targetDate = new Date('2025-11-27T09:00:00-06:00').getTime();
+    const dEl = document.getElementById('cd-days');
+    const hEl = document.getElementById('cd-hours');
+    const mEl = document.getElementById('cd-mins');
+    const sEl = document.getElementById('cd-secs');
+    function pad(n){ return n < 10 ? '0' + n : n; }
+    function tick(){
+      const now = Date.now();
+      let diff = targetDate - now;
+      if (diff <= 0){ dEl.textContent=hEl.textContent=mEl.textContent=sEl.textContent='00'; clearInterval(timer); return; }
+      const days = Math.floor(diff / 86400000); diff %= 86400000;
+      const hours = Math.floor(diff / 3600000);  diff %= 3600000;
+      const mins  = Math.floor(diff / 60000);    const secs = Math.floor((diff % 60000)/1000);
+      dEl.textContent = days; hEl.textContent = pad(hours); mEl.textContent = pad(mins); sEl.textContent = pad(secs);
+    }
+    const timer = setInterval(tick, 1000); tick();
+  </script>
+
+  <!-- Modal: rellenado dinámico -->
+<script>
+  // Abre y rellena el modal leyendo los data-* del botón clicado
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('[data-keynote="open"]');
+    if (!btn) return; // no es el botón "ver más"
+
+    e.preventDefault();
+
+    // utilidades
+    const setText = (id, txt) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = txt || '';
+    };
+    const parseArr = (s) => {
+      try { return Array.isArray(s) ? s : JSON.parse(s || '[]'); }
+      catch { return []; }
+    };
+
+    // dataset del botón
+    const ds = btn.dataset;
+
+    // Texto
+    setText('km-name', ds.name || '');
+    setText('km-title-quote', ds.title ? `“${ds.title}”` : '');
+    setText('km-abstract', ds.abstract || '');
+    setText('km-bio', ds.bio || '');
+    setText('km-affil', ds.affil || '');
+
+    // Foto
+    const img = document.getElementById('km-photo');
+    if (img) {
+      img.src = ds.photo || '';
+      img.alt = ds.name || 'Keynote photo';
+    }
+
+    // Bullets / highlights
+    const ul = document.getElementById('km-highlights');
+    if (ul) {
+      ul.innerHTML = '';
+      parseArr(ds.highlights).forEach(t => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        ul.appendChild(li);
+      });
+    }
+
+    // Links
+    const linksBox = document.getElementById('km-links');
+    if (linksBox) {
+      linksBox.innerHTML = '';
+      parseArr(ds.links).forEach(l => {
+        const a = document.createElement('a');
+        a.href = (l && l.href) || '#';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'btn btn-outline-primary btn-sm mr-2 mb-2';
+        a.textContent = (l && l.label) || 'Link';
+        linksBox.appendChild(a);
+      });
+    }
+
+    // Abre el modal
+    $('#keynoteModal').modal('show');
+  });
+</script>
+
+
+
+  <!-- Modal Keynote (MICAI-like) -->
+<!-- Modal Keynote (80% viewport) -->
+<div class="modal fade" id="keynoteModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content micai-modal">
+      <!-- Cerrar -->
+      <button type="button" class="micai-close" data-dismiss="modal" aria-label="Close">×</button>
+
+      <!-- Encabezado: Foto + Info -->
+      <div class="micai-hero">
+        <div class="micai-portrait">
+          <img id="km-photo" src="" alt="">
+        </div>
+        <div class="micai-info">
+          <h1 id="km-name" class="micai-name text-center">Speaker name</h1>
+          <div id="km-affil" class="micai-affil text-center">Affiliation / Institution</div>
+          <h2 id="km-title-quote" class="micai-quote">“Talk title as a quote”</h2>
+          <ul id="km-highlights" class="micai-bullets"></ul>
+          
+          <h5 class="micai-quote">About the Talk</h5>
+          <p id="km-abstract" class="mb-4"></p>
+          <h5 class="micai-quote">Bio</h5>
+          <p id="km-bio" class="mb-3"></p>
+
+          <div id="km-links" class="d-flex flex-wrap"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-  <!-- Features -->
-<!-- ===== INFO LANDING (English version) ===== -->
-
-<!-- Band 1: Intro with text and CTA -->
-<section class="band band-intro">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
-        <h2 class="band-title">What is <span class="accent">SMaDE 2025</span>?</h2>
-        <p class="band-text">
-          The <strong>International Congress on Smart Machines and Data Engineering (SMaDE)</strong> is an international forum dedicated to presenting and discussing cutting-edge research, methodologies, and applications in <em>artificial intelligence</em>, <em>algorithms</em>, and <em>data-driven technologies</em>.
-          It will take place on <strong>December 4–5, 2025</strong> in <strong>Coatzacoalcos, Veracruz, Mexico</strong>.
-        </p>
-        <div class="mt-3">
-          <a class="btn" href="importanDate.html">Important Dates</a>
-          <a class="btn btn-ghost ml-2" href="program.html">Program</a>
-        </div>
-      </div>
-      <div class="col-lg-5 mt-4 mt-lg-0">
-        <div class="info-card">
-          <div class="row no-gutters">
-            <div class="col-12">
-              <div class="info-item">
-                <div class="icon-circle"><i class="fa fa-calendar"></i></div>
-                <div>
-                  <h5 class="mb-1">Key Deadlines</h5>
-                  <p class="mb-0">Submission, review, and notification dates.</p>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="icon-circle"><i class="fa fa-book"></i></div>
-                <div>
-                  <h5 class="mb-1">Proceedings (ISSN: 2594-1054)</h5>
-                  <p class="mb-0">All accepted papers will be published in the Conference Proceedings (ISSN: 2594-1054) and will be available to the scientific community. Selected high-quality papers may be invited for submission to indexed journals.</p>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="icon-circle"><i class="fa fa-trophy"></i></div>
-                <div>
-                  <h5 class="mb-1">Best Papers</h5>
-                  <p class="mb-0">May be invited for indexed journals.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- /info-card -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Band 2: Topics (cards in 3 columns) -->
-<section class="band band-topics">
-  <div class="container">
-    <h2 class="band-title text-center">Track Topics</h2>
-    <p class="text-center band-subtitle">Including but not limited to</p>
-
-    <div class="row topic-grid">
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="topic-card">
-          <h5><i class="fa fa-microchip mr-2"></i>Artificial Intelligence</h5>
-          <ul>
-            <li>Machine learning and deep learning applications</li>
-            <li>Natural language processing and text mining</li>
-            <li>Pattern recognition and computer vision</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="topic-card">
-          <h5><i class="fa fa-database mr-2"></i>Data Engineering</h5>
-          <ul>
-            <li>Big data analytics and data mining</li>
-            <li>Real-time data processing and streaming analytics</li>
-            <li>Data Quality and Governance</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="topic-card">
-          <h5><i class="fa fa-cogs mr-2"></i>Optimization & Systems</h5>
-          <ul>
-            <li>Intelligent algorithms and optimization techniques</li>
-            <li>Decision support systems and recommender systems</li>
-            
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="topic-card">
-          <h5><i class="fa fa-code-fork mr-2"></i>Bio-Inspired & Fuzzy Systems</h5>
-          <ul>
-            <li>Evolutionary computation and bio-inspired algorithms</li>
-            <li>Fuzzy logic and soft computing</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="topic-card">
-          <h5><i class="fa fa-users mr-2"></i>Human & Social Aspects</h5>
-          <ul>
-            <li>Human-Computer Interaction</li>
-            <li>Social media analytics and sentiment analysis</li>
-            <li>Plagiarism detection and authorship analysis</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="topic-card">
-          <h5><i class="fa fa-check-square-o mr-2"></i>Submission Guidelines</h5>
-          <ul>
-            <li>Papers must be written in English and not exceed 12 pages (including figures and appendices). Contributions should include unpublished results of  research, case studies or experiences that provide new evidence about the research or application regarding to the main topics.</li>
-            <li>All manuscripts will undergo a double-blind peer review by at least two reviewers.</li>
-            <li>Please ensure that your papers are formatted correctly.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-2">
-      <a class="btn" href="#">Submit via CMT-3</a>
-      <a class="btn btn-ghost ml-2" href="index.html#guidelines">Author Guidelines</a>
-    </div>
-  </div>
-</section>
-
-<!-- Band 3: Downloads -->
-<section class="band band-downloads">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-7 mb-3 mb-lg-0">
-        <h3 class="mb-2">Proceedings</h3>
-        <p class="mb-0">Access past editions and the upcoming 2025 edition.</p>
-      </div>
-      <div class="col-lg-5 text-lg-right">
-        <a class="btn btn-full mb-2" href="#" target="_blank">Proceedings 2025</a>
-        <a class="btn btn-full mb-2" href="pdf/sacs2018/Symposium2018v1.pdf" target="_blank">Proceedings 2018</a>
-        <a class="btn btn-full mb-2" href="pdf/sacs2017/SymposiumSACS2017FinalISSN_010618.pdf" target="_blank">Proceedings 2017</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ===== /INFO LANDING ===== -->
-
-  <!-- /Features -->
-
-
-  <!-- Portfolio -->
-
-  <!-- <section class="portfolio" id="portfolio">
-    <div class="container text-center">
-      <h2>
-          Galery
-        </h2>
-
-      <p>
-        Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, Per nihil dicant commodo an.
-      </p>
-    </div>
-
-    <div class="portfolio-grid">
-      <div class="row">
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-1.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-2.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-3.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-4.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-5.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-6.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-7.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-8.jpg">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    The Dude Rockin'
-                  </h3>
-
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-                  </p>
-                </div>
-              </div></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- /Portfolio -->
-
-  <!-- Team -->
- <section class="team" id="team">
-    <div class="container">
-      <h2 class="text-center">
-          Keynote Speakers
-      </h2>
-      <div class="row">
-
-      <div class="col-sm-3 col-xs-6">
-          <div class="card card-block">
-        </div>
-      </div>
-      <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-4">
-        <div class="card placeholder-card">
-          <div class="card-body">
-            <h3 class="placeholder-text">To Be Confirmed</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-<!--
-        <div class="col-sm-3 col-xs-6">
-          <div class="card card-block">
-            <img alt="" class="team-img" src="img/team-1.png">
-              <div class="card-title-wrap">
-                <span class="card-title">Dr. Caleb A. Rascón Estebané</span>
-              </div>
-              <div class="team-over">
-              <p>
-                Licenciado en Ingeniería en Sistemas Electrónicos en el ITESM. Obtuvo su Doctorado directo en The University of Manchester in the UK.Fundador de Makko IT, empresa dedicada al desarrollo tecnológico digital. Cuenta con dos pos-doctorados en el área de Inteligencia Artificial. Ha trabajado con el grupo de investigación Golem de la UNAM. En 2014 le fue otorgada la distinción de Innovador menor de 35 años por el MIT Technology Review. Tiene varios artículos publicados en revistas científicas y ha sido conferencista en eventos internacionales, así como eventos de difusión científica. Actualmente es catedrático en la UNAM, tutor del Posgrado en Ciencia e Ingenierías de la Computación y del Posgrado en Ingeniería, y es Miembro del Consejo Ejecutivo de la Competencia Internacional RoboCup@Home.
-              </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-3 col-xs-6">
-        <div class="card card-block">
-          <img alt="" class="team-img" src="img/team-2.png">
-              <div class="card-title-wrap">
-                <span class="card-title">Dra. María Victoria Carreras Cruz</span>
-              </div>
-              <div class="team-over">
-              <p>
-                Licenciada en Cibernética Matemática por la Facultad de Ciencias Exactas de la Universidad de la Habana, Cuba. Maestra en Administración de Negocios. Doctora en Ciencias Computacionales por el ITESM. Investigador Agregado por la Academia de Ciencias de Cuba. Directora de Ingeniería en Animación y Videojuegos y Directora de Ingeniería en Tecnologías de Información y Sistemas Inteligentes en la Universidad Panamericana, México. Profesor-Investigador de la Universidad Panamericana. <br>
-                Área: Procesamiento de Señales y Reconocimiento de Patrones.
-              </p>
-        </div>
-        </a>
-      </div>
-    </div>
--->
-    </div>
-    </div>
-  </section>
-  <!-- /Team -->
-
-<!-- Organizing Committee -->
-<section class="committee" id="committee">
-  <div class="container text-center">
-    <h2 class="mb-4">Organizing Committee</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <div class="committee-box">
-          <p><strong>General Chair:</strong> Dr. Eddy Sánchez-DelaCruz</p>
-          <p><strong>Program Chair:</strong> Dra. Cecilia-Irene Loeza-Mejía, Dr. Luis-Alfonso Landero-Hernández</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
- 
-  <!-- @component: footer -->
-  <section id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="info">
-            <h2 class="section-title" align="center">Contact</h2>
-            <div>
-              <i class="fa fa-user"></i>
-                <p>Dr. Eddy Sánchez de la Cruz</p>
-              <i class="fa fa-envelope"></i>
-                <p>esanchezd@itsm.edu.mx | sacs@itsm.edu.mx</p>
-              <i class="fa fa-phone"></i>
-                <p>01 (235) 323 1545 ext. 151</p>
-              <i class="fa fa-map-marker"></i>
-                <p>Km. 1.8 Carretera a Loma del Cojolite | C.P. 93821 <br> Misantla | Veracruz | México</p>
-            </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
-            <p class="copyright-text">
-              © 2025 Symposium on Applied Computer Science 
-            </p>            
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
-
-  <!-- Required JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/tether/js/tether.min.js"></script>
-  <script src="lib/stellar/stellar.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/easing/easing.js"></script>
-  <script src="lib/stickyjs/sticky.js"></script>
-  <script src="lib/parallax/parallax.js"></script>
-  <script src="lib/lockfixed/lockfixed.min.js"></script>
-  <!-- Template Specisifc Custom Javascript File -->
-  <script src="js/custom.js"></script>
-  <script src="js.contactform.js"></script>
-
 
 </body>
 </html>

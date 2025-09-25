@@ -15,10 +15,16 @@ p {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-size: 20px;
-  color: #ffffff;
+/* Ajuste del <h1> en el header */
+#header .social-nav h1 {
+  font-size: 16px;        /* más pequeño, como subtítulo */
+  line-height: 1.4;       /* mejor espaciado */
+  margin-top: 8px;       /* baja el texto */
+  margin-bottom: 0;       /* quita espacio extra */
+  font-weight: 500;       /* estilo uniforme con los demás */
+  color: #fff;            /* para que combine con el menú */
 }
+
 
 h2 {
   font-size: 30px;
@@ -334,7 +340,7 @@ a:hover {
 }
 
 .nav-menu ul li:hover {
-  background: #199EB8;
+  background: #56747a;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -349,7 +355,7 @@ a:hover {
 }
 
 .nav-menu ul li a:hover {
-  color: #fff;
+  color: #56747a;
 }
 
 .nav-menu ul ul {
@@ -995,7 +1001,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* HERO compacto (no pantalla completa) */
 .hero-carousel,
 #heroCarousel .carousel-item img{
-  height: 58vh;                 /* ajusta a tu gusto: 50–65vh */
+  height: 100vh;                 /* ajusta a tu gusto: 50–65vh */
 }
 
 #heroCarousel .carousel-item img{
@@ -1121,3 +1127,826 @@ body.mobile-nav-active #mobile-nav-toggle {
 .committee-box strong {
   color: #199EB8; /* mismo azul del tema */
 }
+
+/* Mantener el header fijo arriba */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;  /* para que quede encima del contenido */
+}
+
+/* Ajustar el espacio del body para que no tape el contenido */
+body {
+  padding-top: 80px; /* ajusta este valor a la altura real del header */
+}
+/* Estilo para el enlace activo */
+.nav-menu li.active > a {
+  background-color: #535d61;   /* color de fondo activo */
+  color: #fff !important;      /* texto en blanco */
+  border-radius: 20px;         /* bordes redondeados */
+  padding: 22px 15px;           /* más espacio para efecto “pill” */
+}
+
+/* Opcional: al pasar el mouse también */
+.nav-menu li > a:hover {
+  background-color: #535d61;
+  color: #fff !important;
+  border-radius: 20px;
+}
+
+/* css/style.css */
+@media (min-width: 768px){
+  .info-card .mb-3 { margin-bottom: 1.25rem !important; }
+}
+/* Para que el footer se mantenga siempre al fondo */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto; /* empuja el footer al fondo */
+}
+.hero-section {
+  position: relative;
+  min-height: 100vh; /* ocupa toda la pantalla */
+  background: url("img/cover2.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff; /* texto blanco */
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* transparencia negra */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* sobre la capa oscura */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+}
+
+.carousel-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#heroCarousel .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+#heroCarousel .carousel-caption {
+  z-index: 2;
+  color: #fff;
+}
+
+/* ===== Program styles ===== */
+.program-section {
+  padding: 60px 0 40px;
+  background: #fff;
+}
+.program-title{
+  color:#070a0a; /* tu turquesa de marca */
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.program-subtitle{
+  color:#6c757d;
+  margin-top:.25rem;
+}
+
+.schedule-card{
+  background:#ffffff;
+  border-radius:18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  padding:22px 22px 18px;
+  height:100%;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.schedule-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.12);
+}
+
+.schedule-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+.day-badge{
+  background:#e6f6f8;
+  color:#1798a5;
+  font-weight:700;
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:.9rem;
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+}
+.date-title{
+  margin:0;
+  font-weight:800;
+  color:#2b2b2b;
+}
+
+.schedule-list{
+  list-style:none;
+  margin:0;
+  padding:4px 0 0 0;
+}
+.schedule-list li{
+  display:grid;
+  grid-template-columns: 64px 14px 1fr;
+  align-items:start;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px dashed #e9ecef;
+}
+.schedule-list li:last-child{ border-bottom:none; }
+
+.schedule-list .time{
+  font-weight:700;
+  color:#1798a5;
+}
+.schedule-list .dot{
+  width:10px; height:10px;
+  background:#1798a5;
+  border-radius:50%;
+  margin-top:6px;
+  box-shadow:0 0 0 4px rgba(23,152,165,.12);
+}
+.schedule-list .activity{
+  color:#3c3c3c;
+}
+
+/* botón descarga */
+.btn-download{
+  background:#1798a5;
+  color:#fff !important;
+  border-radius:999px;
+  padding:10px 18px;
+  font-weight:700;
+  border:none;
+}
+.btn-download:hover{
+  background:#117f89;
+  color:#fff !important;
+}
+
+/* resp. */
+@media (max-width: 991.98px){
+  .program-section{ padding-top: 48px; }
+}
+
+/* ===== Important Dates (timeline) ===== */
+.dates-section { padding: 60px 0 50px; background:#fff; }
+.dates-title { color:#070a0a; font-weight:800; letter-spacing:.2px; }
+.dates-subtitle { color:#6c757d; margin: .25rem 0 0; }
+
+.timeline {
+  position: relative;
+  margin: 24px auto 0;
+  max-width: 920px;
+  padding-left: 20px;
+}
+.timeline::before {
+  content:"";
+  position:absolute;
+  left: 34px;
+  top:0;
+  bottom:0;
+  width: 2px;
+  background: linear-gradient(#d9f0f3, #e9ecef);
+}
+
+.tl-item {
+  position:relative;
+  display:flex;
+  gap:18px;
+  padding:18px 0 8px;
+}
+.tl-marker {
+  position:relative;
+  z-index:2;
+  flex: 0 0 68px;
+  display:flex; align-items:center; justify-content:center;
+  width:68px; height:68px;
+  background:#e6f6f8;
+  border: 2px solid #c9ecf0;
+  color:#1798a5;
+  border-radius:50%;
+  box-shadow: 0 8px 18px rgba(23,152,165,.15);
+  font-size: 22px;
+}
+.tl-content {
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  padding:16px 18px 14px;
+  flex:1;
+}
+.tl-top {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px; margin-bottom:4px;
+}
+.tl-badge {
+  background:#e6f6f8; color:#1798a5; font-weight:700;
+  border-radius:999px; padding:6px 12px; font-size:.85rem;
+}
+.tl-badge.badge-green { background:#e9f7ef; color:#2f9d61; }
+.tl-badge.badge-yellow { background:#fff7e1; color:#c28a00; }
+.tl-badge.badge-dark { background:#e9ecef; color:#343a40; }
+
+.tl-date { font-weight:800; color:#2b2b2b; }
+.tl-title { margin:.25rem 0 .35rem; font-weight:800; color:#2b2b2b; }
+.tl-text { margin:0; color:#495057; }
+
+.btn-download{
+  background:#1798a5; color:#fff !important;
+  border-radius:999px; padding:10px 18px; font-weight:700; border:none;
+}
+.btn-download:hover{ background:#117f89; color:#fff !important; }
+
+/* Responsive: en móvil, línea a la izquierda y tarjetas apiladas */
+@media (max-width: 575.98px){
+  .timeline { padding-left: 12px; }
+  .timeline::before { left: 28px; }
+  .tl-marker { width:56px; height:56px; flex-basis:56px; font-size:20px; }
+}
+/* ====== MENÚ en color #56747a ====== */
+:root{
+  --menu: #56747a ;
+  --menu-hover: #476067; /* un poquito más oscuro para hover */
+  --menu-active: #3f5459; /* para la pestaña activa (pill) */
+}
+
+/* barra superior */
+#header{
+  background: var(--menu);
+}
+
+/* links del menú */
+.nav-menu a{
+  color:#fff;
+}
+
+/* hover de items del menú (pill) */
+.nav-menu li > a:hover{
+  background-color: var(--menu-hover);
+  color:#fff !important;
+  border-radius: 20px;
+}
+
+/* pestaña activa (pill) */
+.nav-menu li.active > a{
+  background-color: var(--menu-active);
+  color:#fff !important;
+  border-radius: 20px;
+  /* mantiene tu padding actual */
+}
+
+/* Submenú (dropdown) */
+.nav-menu ul li{ background:#fff; }
+.nav-menu ul li a{ color:#333; }
+.nav-menu ul li:hover{ background: var(--menu); }
+.nav-menu ul li:hover > a{ color:#fff; }
+
+/* color del icono flecha (si lo necesitas más claro al pasar) */
+.nav-menu .fa-angle-down{ margin-left: 6px; }
+/* ===== Registration / Pricing ===== */
+.pricing-note{
+  color:#56747a;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+.pricing-card{
+  border-radius:14px;
+  border:1px solid #eef2f4;
+}
+
+.pricing-table{
+  border-collapse: separate;
+  border-spacing:0;
+}
+
+.pricing-table thead th{
+  background:#f7fafb;
+  color:#455a64;
+  font-weight:700;
+  border-bottom:1px solid #e6ecef !important;
+}
+
+.pricing-table tbody th,
+.pricing-table tbody td{
+  border-top:1px solid #eef2f4 !important;
+  padding:12px 14px;
+}
+
+.pricing-table .row-group{
+  background:#f9fbfd;
+  color:#1798a5;
+  font-weight:800;
+  border-right:1px solid #eef2f4;
+  vertical-align:middle;
+}
+
+.price{
+  font-weight:800;
+  color:#2b2b2b;
+}
+
+.price-big{
+  color:#2b2b2b;
+}
+
+/* Etiqueta circular para icono */
+.pill{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:999px;
+  background:#e6f0f2; color:#56747a; font-size:16px;
+}
+
+/* Mejoras responsive */
+@media (max-width: 767.98px){
+  .pricing-table thead th:first-child{ display:none; }
+  .pricing-table tbody .row-group{ display:none; } /* ocultamos la celda grande en móvil */
+}
+/* ===== Committee Section ===== */
+.committee-box {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.committee-box p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.committee h2, .committee h3 {
+  color: #56747a;
+  font-weight: 700;
+}
+/* Logo en el menú */
+.nav-menu .logo-item img.menu-logo {
+  height: 40px;        /* ajusta tamaño */
+  width: auto;         /* mantiene proporción */
+  margin-top: -8px;    /* lo baja un poco para centrar */
+}
+
+
+/* 🔹 Ajuste del logo en el carrusel */
+.hero-logo {
+  max-width: 280px;   /* aumenta este valor para hacerlo más grande */
+  margin-bottom: 15px; /* espacio entre el logo y el título */
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    max-width: 160px; /* tamaño más pequeño en móviles */
+  }
+}
+/* ===== Animaciones de entrada del HERO ===== */
+
+/* Fondo: ligero zoom + fade */
+#heroCarousel .carousel-item img {
+  opacity: 0;
+  transform: scale(1.06);
+  animation: heroBgIn 2s ease-out 0.12s forwards;
+}
+
+/* Contenedor de textos: fade + up */
+#heroCarousel .carousel-caption .overlay-text {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeUp 0.11s ease-out 0.37s forwards;
+}
+
+/* Logo: aparece antes que el título */
+#heroCarousel .hero-logo {
+  width: 140px;            /* ajústalo si lo quieres más grande/pequeño */
+  margin-bottom: 14px;
+  opacity: 0;
+  transform: translateY(-8px) scale(.92);
+  animation: heroFadeDown 0.87s ease-out 0.27s forwards;
+}
+
+/* Stagger en los textos (entran uno tras otro) */
+#heroCarousel .overlay-text h1 {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeUp 0.11s ease-out 0.57s forwards;
+}
+
+#heroCarousel .overlay-text p:nth-of-type(1) {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeUp 0.9s ease-out 0.75s forwards;
+}
+
+#heroCarousel .overlay-text p:nth-of-type(2) {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeUp 0.11s ease-out 0.92s forwards;
+}
+
+/* Keyframes */
+@keyframes heroBgIn {
+  from { opacity: 0; transform: scale(1.06); }
+  to   { opacity: 1; transform: scale(1.00); }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeDown {
+  from { opacity: 0; transform: translateY(-8px) scale(.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Respeta usuarios con “reducir movimiento” */
+@media (prefers-reduced-motion: reduce) {
+  #heroCarousel .carousel-item img,
+  #heroCarousel .carousel-caption .overlay-text,
+  #heroCarousel .hero-logo,
+  #heroCarousel .overlay-text h1,
+  #heroCarousel .overlay-text p {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* === Countdown sobre el hero === */
+#heroCarousel { position: relative; }
+
+.countdown{
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 4; /* por encima del overlay del hero */
+  display: flex;
+  gap: 28px;
+  align-items: center;
+
+  background: #292a2e;             /* color */
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+
+.countdown .cd-box{
+  text-align: center;
+  min-width: 78px;
+}
+
+.countdown .cd-box span{
+  display: block;
+  font-weight: 800;
+  line-height: 1;
+  font-size: 40px;  /* tamaño grande como la imagen */
+  letter-spacing: 1px;
+}
+
+.countdown .cd-box small{
+  display: block;
+  margin-top: 2px;
+  font-weight: 600;
+  opacity: .95;
+}
+
+/* Responsivo: reducir en tablets/móviles */
+@media (max-width: 991.98px){
+  .countdown{ gap: 18px; padding: 10px 14px; }
+  .countdown .cd-box{ min-width: 62px; }
+  .countdown .cd-box span{ font-size: 28px; }
+}
+
+@media (max-width: 575.98px){
+  /* En móviles muy pequeños, céntralo arriba */
+  .countdown{
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: 10px;
+    gap: 14px;
+  }
+  .countdown .cd-box{ min-width: 56px; }
+  .countdown .cd-box span{ font-size: 24px; }
+}
+
+/* Texto estilo MICAI */
+.smade-text {
+  font-family: 'Roboto', sans-serif;   /* similar al de MICAI */
+  font-weight: 900;                    /* super bold */
+  font-size: 18px;                     /* ajusta al tamaño que quieras */
+  color: #ffffff;                      /* blanco */
+  letter-spacing: 1px;                 /* un poco más abierto */
+}
+
+.year-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color:#ffffff;   
+  margin-left: 6px;
+}
+/* Tamaño del modal: 80% ancho/alto */
+#keynoteModal .modal-dialog{
+  max-width:80vw !important;
+  width:80vw !important;
+  margin:1rem auto;
+}
+#keynoteModal .modal-content{
+  height:80vh;
+  display:flex;flex-direction:column;
+  border:none;border-radius:16px;overflow:hidden;
+  box-shadow:0 22px 50px rgba(0,0,0,.35);
+}
+
+/* Botón cerrar */
+.micai-close{
+  position:absolute;top:14px;right:16px;z-index:3;
+  border:0;background:transparent;font-size:28px;line-height:1;color:#213;cursor:pointer;
+}
+
+/* Cabecera (foto + info) */
+.micai-hero{
+  flex:0 0 auto;display:flex;gap:26px;align-items:stretch;
+  padding:24px;background:#fff;border-bottom:1px solid #eef0f2;
+}
+.micai-portrait{
+  position:relative;flex:0 0 36%;
+  border-radius:16px;
+  background:linear-gradient(135deg,#6f565a 0%, #525061 50%, #595f65 100%);
+  display:flex;align-items:center;justify-content:center;min-height:320px;
+}
+
+.micai-info{flex:1 1 auto;padding:4px 6px;overflow:hidden}
+.micai-name{font-weight:800;color:#102a54;margin:0 0 8px;line-height:1.1;font-size:2rem}
+.micai-quote{color:#102a54;font-weight:700;margin:0 0 14px;line-height:1.25;font-size:1.25rem}
+.micai-bullets{margin:0 0 14px;padding-left:18px}
+.micai-bullets li{margin:.35rem 0;color:#0f2a52;font-weight:600}
+.micai-affil{font-style:italic;color:#334;opacity:.9}
+
+/* Cuerpo con scroll interno */
+.micai-body{flex:1 1 auto;background:#fff;padding:4px 16px;overflow:auto}
+.micai-section{color:#1798a5;text-transform:uppercase;font-weight:800;letter-spacing:.3px;margin:8px 0}
+
+/* Responsive: apila en móvil */
+@media (max-width: 991.98px){
+  #keynoteModal .modal-dialog{max-width:92vw;width:92vw}
+  #keynoteModal .modal-content{height:85vh}
+  .micai-hero{flex-direction:column}
+  .micai-portrait{flex:none;width:100%;min-height:260px}
+  .micai-name{font-size:1.6rem}
+  .micai-quote{font-size:1.05rem}
+}
+
+    /* Header logos en menú (ajusta si necesitas) */
+    .menu-logo{height:34px;margin-right:8px;vertical-align:middle}
+    .smade-text{font-weight:800;margin-left:6px;color:#fff}
+    .year-text{font-weight:800;margin-left:4px;color:#fff}
+
+/* Sponsors */
+.sponsors {
+  background: #44474f;
+  color: #fff;
+  padding: 40px 0;
+}
+.sponsors h3 {
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+#sponsorCarousel {
+  background: none;
+  padding: 0;
+  height: auto !important;
+  min-height: unset !important;
+}
+/* QUITA display:flex de carousel-inner y carousel-item */
+#sponsorCarousel .carousel-inner {
+  height: auto !important;
+  min-height: unset !important;
+}
+#sponsorCarousel .carousel-item {
+  height: auto !important;
+  min-height: unset !important;
+  background: none;
+  padding: 0;
+}
+/* SOLO sponsor-track debe ser flex */
+.sponsor-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 0;
+  min-height: 0;
+}
+.sponsor-logo {
+  max-height: 90px;
+  width: auto;
+  opacity: .95;
+  filter: brightness(0) invert(1);/* logos en blanco */
+  transition: transform .2s ease, opacity .2s ease;
+}
+.sponsor-logo:hover {
+  transform: scale(1.06);
+  opacity: 1;
+}
+#sponsorCarousel .carousel-control-prev-icon,
+#sponsorCarousel .carousel-control-next-icon {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
+  width: 2.25rem;
+  height: 2.25rem;
+}
+/* Tarjeta de información de pago con efecto hover */
+.payment-info-card {
+  transition: box-shadow 0.25s, transform 0.25s;
+  border-radius: 1rem;
+  border-left: 5px solid #1798a5 !important;
+  background: #f8fafc;
+}
+.payment-info-card:hover {
+  box-shadow: 0 8px 32px rgba(23,152,165,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
+  transform: translateY(-6px) scale(1.012);
+}
+.payment-alert {
+  background: #e6f6f8 !important;
+  color: #1798a5 !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+.payment-info-card .fa {
+  vertical-align: middle;
+}
+/* ===== Nota / Sintillo en el hero ===== */
+.hero-note{
+  position: absolute;
+  right: 27%;              /* ajusta para mover horizontalmente */
+  bottom:39%;            /* ajusta para mover verticalmente   */
+  z-index: 4;
+
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+
+  padding: 12px 14px 12px 16px;
+  border-radius: 12px;
+
+  background: rgba(32,45,49,.88);             /* oscuro, sobrio */
+  color: #e9f1f2;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);                  /* sutil */
+}
+
+.hero-note .fa{
+  font-size: 18px;
+  margin-top: 2px;
+  color: #8ec3cc;                              /* acento suave */
+}
+
+.hero-note .note-title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  line-height: 1;
+  display: block;
+}
+
+.hero-note .note-sub{
+  display: block;
+  font-size: .88rem;
+  opacity: .92;
+  margin-top: 2px;
+}
+
+/* Delicada barra de acento a la izquierda */
+.hero-note::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  border-radius: 12px 0 0 12px;
+  background: linear-gradient(180deg,#7aaeb6,#4c8f9b);
+  opacity: .85;
+}
+
+/* Responsivo */
+@media (max-width: 991.98px){
+  .hero-note{
+    right: 50%;
+    transform: translateX(50%); /* céntralo en tablets/móvil */
+    bottom: 10%;
+    padding: 10px 12px;
+  }
+  .hero-note .note-sub{ display: none; } /* compacta el subtítulo */
+}
+
+@media (max-width: 575.98px){
+  .hero-note{
+    bottom: 8%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+/* Animación para hero-note */
+@keyframes heroNoteFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-note {
+  opacity: 0;
+  animation: heroNoteFadeInUp 1s  0.7s forwards;
+  position: absolute;
+
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.keynote-photo--contain{
+  height: 340px !important;      /* mismo alto para todas */
+  width: 100%;
+  object-fit: contain !important;
+  object-position: bottom center !important;
+  background: #eef2f6;
+  padding: 0px;
+}
+
+
+.keynote-photo--boost{
+  transform: scale(1.16) translateY(4px); /* ajusta 1.12–1.22 según veas */
+  transform-origin: bottom center;
+}
+
+/* móvil (opcional) */
+@media (max-width:575.98px){
+  .keynote-photo--contain{ height: 280px !important; }
+}
+
+.keynote-badge {
+  background: #e6f6f8;
+  color: #1798a5;
+  font-weight: 700;
+  white-space: normal;     /* permite saltos de línea */
+  line-height: 1.3;
+  font-size: .92rem;
+  padding: .6rem .95rem;
+  border-radius: 999px;
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
+  hyphens: auto;
+}
+
