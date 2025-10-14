@@ -1916,7 +1916,7 @@ body {
 }
 
 .keynote-photo--contain{
-  height: 340px !important;      /* mismo alto para todas */
+  height: 360px !important;      /* mismo alto para todas */
   width: 100%;
   object-fit: contain !important;
   object-position: bottom center !important;
