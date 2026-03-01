@@ -25,7 +25,6 @@ p {
   color: #fff;            /* para que combine con el menú */
 }
 
-
 h2 {
   font-size: 30px;
   margin-bottom: 65px;
@@ -38,7 +37,6 @@ h3 {
 h4 {
   font-size: 18px;
 }
-
 
 /* ==================================================
   General
@@ -328,7 +326,6 @@ a:hover {
   left: 0;
   padding: 0;
 }
-
 
 .nav-menu ul li {
   background: #fff;
@@ -755,8 +752,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: all 0.3s ease;
 }
 
-
-
 .team .card-title-wrap {
   padding: 15px 25px;
   position: relative;
@@ -998,6 +993,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-right: 30px;
   }
 }
+
 /* HERO compacto (no pantalla completa) */
 .hero-carousel,
 #heroCarousel .carousel-item img{
@@ -1039,6 +1035,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   .hero-carousel,
   #heroCarousel .carousel-item img{ height: 46vh; }
 }
+
 /* ===== Bands estilo landing ===== */
 .band { padding: 70px 0; }
 .band-title { color:#199EB8; margin-bottom:10px; }
@@ -1080,6 +1077,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media(max-width:991px){
   .band { padding: 48px 0; }
 }
+
 /* ===== Placeholder Keynote ===== */
 .placeholder-card {
   background: linear-gradient(145deg, #222, #444);
@@ -1141,6 +1139,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 body {
   padding-top: 80px; /* ajusta este valor a la altura real del header */
 }
+
 /* Estilo para el enlace activo */
 .nav-menu li.active > a {
   background-color: #535d61;   /* color de fondo activo */
@@ -1160,6 +1159,7 @@ body {
 @media (min-width: 768px){
   .info-card .mb-3 { margin-bottom: 1.25rem !important; }
 }
+
 /* Para que el footer se mantenga siempre al fondo */
 html, body {
   height: 100%;
@@ -1174,6 +1174,7 @@ body {
 .site-footer {
   margin-top: auto; /* empuja el footer al fondo */
 }
+
 .hero-section {
   position: relative;
   min-height: 100vh; /* ocupa toda la pantalla */
@@ -1405,11 +1406,12 @@ body {
   .timeline::before { left: 28px; }
   .tl-marker { width:56px; height:56px; flex-basis:56px; font-size:20px; }
 }
+
 /* ====== MENÚ en color #56747a ====== */
 :root{
   --menu: #56747a ;
-  --menu-hover: #476067; /* un poquito más oscuro para hover */
-  --menu-active: #3f5459; /* para la pestaña activa (pill) */
+  --menu-hover: #476067;
+  --menu-active: #3f5459;
 }
 
 /* barra superior */
@@ -1434,7 +1436,6 @@ body {
   background-color: var(--menu-active);
   color:#fff !important;
   border-radius: 20px;
-  /* mantiene tu padding actual */
 }
 
 /* Submenú (dropdown) */
@@ -1443,8 +1444,8 @@ body {
 .nav-menu ul li:hover{ background: var(--menu); }
 .nav-menu ul li:hover > a{ color:#fff; }
 
-/* color del icono flecha (si lo necesitas más claro al pasar) */
 .nav-menu .fa-angle-down{ margin-left: 6px; }
+
 /* ===== Registration / Pricing ===== */
 .pricing-note{
   color:#56747a;
@@ -1502,8 +1503,9 @@ body {
 /* Mejoras responsive */
 @media (max-width: 767.98px){
   .pricing-table thead th:first-child{ display:none; }
-  .pricing-table tbody .row-group{ display:none; } /* ocultamos la celda grande en móvil */
+  .pricing-table tbody .row-group{ display:none; }
 }
+
 /* ===== Committee Section ===== */
 .committee-box {
   background: #f8f9fa;
@@ -1523,51 +1525,47 @@ body {
   color: #56747a;
   font-weight: 700;
 }
+
 /* Logo en el menú */
 .nav-menu .logo-item img.menu-logo {
-  height: 40px;        /* ajusta tamaño */
-  width: auto;         /* mantiene proporción */
-  margin-top: -8px;    /* lo baja un poco para centrar */
+  height: 40px;
+  width: auto;
+  margin-top: -8px;
 }
-
 
 /* 🔹 Ajuste del logo en el carrusel */
 .hero-logo {
-  max-width: 280px;   /* aumenta este valor para hacerlo más grande */
-  margin-bottom: 15px; /* espacio entre el logo y el título */
+  max-width: 280px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
   .hero-logo {
-    max-width: 160px; /* tamaño más pequeño en móviles */
+    max-width: 160px;
   }
 }
-/* ===== Animaciones de entrada del HERO ===== */
 
-/* Fondo: ligero zoom + fade */
+/* ===== Animaciones de entrada del HERO ===== */
 #heroCarousel .carousel-item img {
   opacity: 0;
   transform: scale(1.06);
   animation: heroBgIn 2s ease-out 0.12s forwards;
 }
 
-/* Contenedor de textos: fade + up */
 #heroCarousel .carousel-caption .overlay-text {
   opacity: 0;
   transform: translateY(12px);
   animation: heroFadeUp 0.11s ease-out 0.37s forwards;
 }
 
-/* Logo: aparece antes que el título */
 #heroCarousel .hero-logo {
-  width: 140px;            /* ajústalo si lo quieres más grande/pequeño */
+  width: 140px;
   margin-bottom: 14px;
   opacity: 0;
   transform: translateY(-8px) scale(.92);
   animation: heroFadeDown 0.87s ease-out 0.27s forwards;
 }
 
-/* Stagger en los textos (entran uno tras otro) */
 #heroCarousel .overlay-text h1 {
   opacity: 0;
   transform: translateY(10px);
@@ -1586,7 +1584,6 @@ body {
   animation: heroFadeUp 0.11s ease-out 0.92s forwards;
 }
 
-/* Keyframes */
 @keyframes heroBgIn {
   from { opacity: 0; transform: scale(1.06); }
   to   { opacity: 1; transform: scale(1.00); }
@@ -1602,7 +1599,6 @@ body {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Respeta usuarios con “reducir movimiento” */
 @media (prefers-reduced-motion: reduce) {
   #heroCarousel .carousel-item img,
   #heroCarousel .carousel-caption .overlay-text,
@@ -1622,12 +1618,12 @@ body {
   position: absolute;
   top: 18px;
   right: 22px;
-  z-index: 4; /* por encima del overlay del hero */
+  z-index: 4;
   display: flex;
   gap: 28px;
   align-items: center;
 
-  background: #292a2e;             /* color */
+  background: #292a2e;
   color: #fff;
   padding: 14px 22px;
   border-radius: 8px;
@@ -1643,7 +1639,7 @@ body {
   display: block;
   font-weight: 800;
   line-height: 1;
-  font-size: 40px;  /* tamaño grande como la imagen */
+  font-size: 40px;
   letter-spacing: 1px;
 }
 
@@ -1654,7 +1650,6 @@ body {
   opacity: .95;
 }
 
-/* Responsivo: reducir en tablets/móviles */
 @media (max-width: 991.98px){
   .countdown{ gap: 18px; padding: 10px 14px; }
   .countdown .cd-box{ min-width: 62px; }
@@ -1662,7 +1657,6 @@ body {
 }
 
 @media (max-width: 575.98px){
-  /* En móviles muy pequeños, céntralo arriba */
   .countdown{
     left: 50%;
     right: auto;
@@ -1676,20 +1670,21 @@ body {
 
 /* Texto estilo MICAI */
 .smade-text {
-  font-family: 'Roboto', sans-serif;   /* similar al de MICAI */
-  font-weight: 900;                    /* super bold */
-  font-size: 18px;                     /* ajusta al tamaño que quieras */
-  color: #ffffff;                      /* blanco */
-  letter-spacing: 1px;                 /* un poco más abierto */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 1px;
 }
 
 .year-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 17px;
-  color:#ffffff;   
+  color:#ffffff;
   margin-left: 6px;
 }
+
 /* Tamaño del modal: 80% ancho/alto */
 #keynoteModal .modal-dialog{
   max-width:80vw !important;
@@ -1742,10 +1737,10 @@ body {
   .micai-quote{font-size:1.05rem}
 }
 
-    /* Header logos en menú (ajusta si necesitas) */
-    .menu-logo{height:34px;margin-right:8px;vertical-align:middle}
-    .smade-text{font-weight:800;margin-left:6px;color:#fff}
-    .year-text{font-weight:800;margin-left:4px;color:#fff}
+/* Header logos en menú (ajusta si necesitas) */
+.menu-logo{height:34px;margin-right:8px;vertical-align:middle}
+.smade-text{font-weight:800;margin-left:6px;color:#fff}
+.year-text{font-weight:800;margin-left:4px;color:#fff}
 
 /* Sponsors */
 .sponsors {
@@ -1763,7 +1758,6 @@ body {
   height: auto !important;
   min-height: unset !important;
 }
-/* QUITA display:flex de carousel-inner y carousel-item */
 #sponsorCarousel .carousel-inner {
   height: auto !important;
   min-height: unset !important;
@@ -1774,7 +1768,6 @@ body {
   background: none;
   padding: 0;
 }
-/* SOLO sponsor-track debe ser flex */
 .sponsor-track {
   display: flex;
   align-items: center;
@@ -1788,7 +1781,7 @@ body {
   max-height: 90px;
   width: auto;
   opacity: .95;
-  filter: brightness(0) invert(1);/* logos en blanco */
+  filter: brightness(0) invert(1);
   transition: transform .2s ease, opacity .2s ease;
 }
 .sponsor-logo:hover {
@@ -1801,6 +1794,7 @@ body {
   width: 2.25rem;
   height: 2.25rem;
 }
+
 /* Tarjeta de información de pago con efecto hover */
 .payment-info-card {
   transition: box-shadow 0.25s, transform 0.25s;
@@ -1822,11 +1816,17 @@ body {
 .payment-info-card .fa {
   vertical-align: middle;
 }
-/* ===== Nota / Sintillo en el hero ===== */
+
+/* =========================================================
+   ✅ FIX CROSS-BROWSER: HERO NOTE (Hybrid Event)
+   - Evita conflicto entre transform de media-query y animación
+   - Centrado estándar en responsive
+   ========================================================= */
+
 .hero-note{
   position: absolute;
-  right: 27%;              /* ajusta para mover horizontalmente */
-  bottom:39%;            /* ajusta para mover verticalmente   */
+  right: 15%;
+  bottom:40%;
   z-index: 4;
 
   display: flex;
@@ -1836,17 +1836,23 @@ body {
   padding: 12px 14px 12px 16px;
   border-radius: 12px;
 
-  background: rgba(32,45,49,.88);             /* oscuro, sobrio */
+  background: rgba(32,45,49,.88);
   color: #e9f1f2;
   border: 1px solid rgba(255,255,255,.06);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  backdrop-filter: blur(2px);                  /* sutil */
+  backdrop-filter: blur(2px);
+
+  /* clave: X controlado por variable para no romper la animación */
+  --note-x: 0%;
+
+  opacity: 0;
+  animation: heroNoteFadeInUp 1s 0.7s forwards;
 }
 
 .hero-note .fa{
   font-size: 18px;
   margin-top: 2px;
-  color: #8ec3cc;                              /* acento suave */
+  color: #8ec3cc;
 }
 
 .hero-note .note-title{
@@ -1863,7 +1869,6 @@ body {
   margin-top: 2px;
 }
 
-/* Delicada barra de acento a la izquierda */
 .hero-note::before{
   content: "";
   position: absolute;
@@ -1874,49 +1879,42 @@ body {
   opacity: .85;
 }
 
-/* Responsivo */
+@keyframes heroNoteFadeInUp {
+  from { opacity: 0; transform: translate3d(var(--note-x), 30px, 0); }
+  to   { opacity: 1; transform: translate3d(var(--note-x), 0, 0); }
+}
+
 @media (max-width: 991.98px){
   .hero-note{
-    right: 50%;
-    transform: translateX(50%); /* céntralo en tablets/móvil */
+    left: 50%;
+    right: auto;
     bottom: 10%;
+
+    /* centrado estándar (no se rompe con animación) */
+    --note-x: -50%;
+
     padding: 10px 12px;
   }
-  .hero-note .note-sub{ display: none; } /* compacta el subtítulo */
+  .hero-note .note-sub{ display: none; }
 }
 
 @media (max-width: 575.98px){
   .hero-note{
     bottom: 8%;
-    right: 50%;
-    transform: translateX(50%);
+    left: 50%;
+    right: auto;
+    --note-x: -50%;
   }
-}
-/* Animación para hero-note */
-@keyframes heroNoteFadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.hero-note {
-  opacity: 0;
-  animation: heroNoteFadeInUp 1s  0.7s forwards;
-  position: absolute;
-
 }
 
+/* ====== Ajustes varios finales ====== */
 .info-item {
   display: flex;
   flex-direction: column;
 }
 
 .keynote-photo--contain{
-  height: 360px !important;      /* mismo alto para todas */
+  height: 360px !important;
   width: 100%;
   object-fit: contain !important;
   object-position: bottom center !important;
@@ -1924,13 +1922,11 @@ body {
   padding: 0px;
 }
 
-
 .keynote-photo--boost{
-  transform: scale(1.16) translateY(4px); /* ajusta 1.12–1.22 según veas */
+  transform: scale(1.16) translateY(4px);
   transform-origin: bottom center;
 }
 
-/* móvil (opcional) */
 @media (max-width:575.98px){
   .keynote-photo--contain{ height: 280px !important; }
 }
@@ -1939,7 +1935,7 @@ body {
   background: #e6f6f8;
   color: #1798a5;
   font-weight: 700;
-  white-space: normal;     /* permite saltos de línea */
+  white-space: normal;
   line-height: 1.3;
   font-size: .92rem;
   padding: .6rem .95rem;
@@ -1949,4 +1945,3 @@ body {
   word-break: break-word;
   hyphens: auto;
 }
-
